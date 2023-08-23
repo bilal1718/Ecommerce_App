@@ -1,0 +1,78 @@
+import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../Styles/navbar.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faFlag } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
+import logo from "../Images/download.webp";
+
+export default function Navbar({cartCount}) {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+           <img id="AmazonLogo" src={logo} alt="Amazon Logo" draggable="false" height="30" />
+        </Link>
+        <button className="navbar-toggler" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i className="fas fa-bars"></i>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                <FontAwesomeIcon icon={faFlag} className="me-2" />
+                Pakistan
+              </a>
+            </li>
+          </ul>
+
+          <form className="d-flex align-items-center w-100 form-search">
+            <div className="input-group">
+              <button className="btn btn-light dropdown-toggle shadow-0" type="button" data-mdb-toggle="dropdown"
+                aria-expanded="false" style={{ paddingBottom: "0.4rem" }}>
+                All
+              </button>
+              <ul className="dropdown-menu dropdown-menu-dark fa-ul">
+                
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+
+              </ul>
+              <input type="search" className="form-control" placeholder="Search" aria-label="Search" />
+              <a href="#!" className="text-white"><i class="fas fa-search ps-3"></i></a>
+            </div>
+          </form>
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+            <li className="nav-item me-3">
+            <Link to="/form" className="nav-link d-flex align-items-center">
+                Sign Up
+              </Link>
+            </li>
+            
+            <li className="nav-item me-3">
+              <a className="nav-link d-flex align-items-center" href="#!">
+              Orders
+              </a>
+            </li>
+            <li className="nav-item" style={{ width: "45px" }}>
+          <Link className="nav-link d-flex align-items-center" to="/cart">
+            
+
+            
+            <div className="cart-icon cartIconStyle">
+              <FontAwesomeIcon icon={faShoppingCart} />
+              <span className="cartQuantityStyle">{cartCount}</span>
+            </div>
+          </Link>
+        </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
