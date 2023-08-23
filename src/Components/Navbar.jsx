@@ -16,14 +16,7 @@ export default function Navbar({ cartCount }) {
         </Link>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active d-flex align-items-center" aria-current="page" href="#">
-                <FontAwesomeIcon icon={faFlag} className="me-2" />
-                Pakistan
-              </a>
-            </li>
-          </ul>
+          
 
           <form className="d-flex align-items-center w-100 form-search">
             <div className="input-group">
@@ -36,8 +29,6 @@ export default function Navbar({ cartCount }) {
                   <hr className="dropdown-divider" />
                 </li>
               </ul>
-              <input type="search" className="form-control" placeholder="Search" aria-label="Search" />
-              <a href="#!" className="text-white"><FontAwesomeIcon  className="ps-3" /></a>
             </div>
           </form>
           <ul className="navbar-nav ms-auto mb-2">
@@ -46,11 +37,7 @@ export default function Navbar({ cartCount }) {
                 Sign Up
               </Link>
             </li>
-            <li className="nav-item me-3">
-              <a className="nav-link d-flex align-items-center" href="#!">
-                Orders
-              </a>
-            </li>
+            
             <li className="nav-item" style={{ width: "45px" }}>
               <Link className="nav-link d-flex align-items-center" to="/cart">
                 <div className="cart-icon cartIconStyle">
